@@ -1,0 +1,178 @@
+//<Подключаем шрифты>=======================================================
+// @import "fonts";
+//<Подключаем шрифты>=======================================================
+
+//<Подключаем МИКСИНЫ>=======================================================
+// @import "_mixins";
+//<Подключаем МИКСИНЫ>=======================================================
+
+//<Подключаем исконочные шрифты>=======================================================
+// @import "icons";
+//<Подключаем исконочные шрифты>=======================================================
+
+//<Подключаем стили для спойлеров>=======================================================
+// @import "_spollers";
+//<Подключаем стили для спойлеров>=======================================================
+
+//<Шрифт по умолчанию>=======================================================
+$fontFamily: ""; //"Название шрифта"
+$fontSize: 16;
+//<Шрифт по умолчанию>=======================================================
+
+//<ПЕРЕМЕННЫЕ>=======================================================
+$minWidth: 320px;
+$maxWidth: 1440; // максимальная ширина контента
+$maxWidthContainer: 1000; // ширина ограничивающего контейнера: 1240 + 15 + 15 (15 - отступы безопасности слева и справа)
+$md1: $maxWidthContainer + 12;
+$md2: 991.78;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000;
+$mainBackground: #bbbbbb;
+//<ПЕРЕМЕННЫЕ>=======================================================
+
+//<Обнуление стилей>=======================================================
+@import "_nullstyle";
+body {
+    color: $mainColor;
+    background-color: $mainBackground;
+    font-size: 14px;
+}
+//<Обнуление стилей>=======================================================
+
+//<ОБОЛОЧКА>=======================================================
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &._loaded {
+    }
+}
+//<ОБОЛОЧКА>=======================================================
+
+//<ОСНОВНАЯ СЕТКА>=======================================================
+.container {
+    max-width: ($maxWidthContainer + px);
+    margin: 0 auto;
+    padding: 0px 15px;
+    // @media (max-width: ($md1+px)) {
+    //     max-width: 970px;
+    // };
+    // @media (max-width: ($md2+px)) {
+    //     max-width: 750px;
+    // };
+    // @media (max-width: ($md3+px)) {
+    //     max-width: none;
+    //     padding: 0 10px;
+    // };
+}
+//<ОСНОВНАЯ СЕТКА>=======================================================
+.none {
+    display: none;
+}
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: left;
+}
+.title {
+    font-size: 44px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.sub-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.card {
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.list-group {
+    padding: 0 20px;
+}
+.list-group-item {
+}
+.main-item {
+    text-align: center;
+    padding: 30px 0;
+}
+.list {
+    &__title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+}
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    &__buttons {
+        display: flex;
+        gap: 15px;
+    }
+}
+.task-item.done .task-title {
+    color: #a3a2a2;
+    text-decoration: line-through;
+}
+.task-title {
+    font-size: 24px;
+}
+.btn-action {
+    padding: 10px;
+    border-radius: 10px;
+    img {
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+    }
+}
+.add {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.card-header {
+    font-size: 24px;
+    background-color: #e7e7e7;
+    padding: 20px;
+}
+.card-body {
+    padding: 0 20px;
+}
+.form-group {
+}
+.form-control {
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: blue;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: all ease 0.2s;
+    &:hover {
+        background-color: rgb(3, 53, 218);
+    }
+}
+
+[data-action="done"],
+[data-action="delete"] {
+    transition: all ease 0.3s;
+    &:hover {
+        background-color: #d1d0d0;
+    }
+}
